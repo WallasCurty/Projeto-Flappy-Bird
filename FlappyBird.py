@@ -92,7 +92,7 @@ class Passaro:
         imagem_rotacionada = pygame.transform.rotate(self.imagem, self.angulo)
         pos_centro_imagem = self.imagem.get_rect(topleft = (self.x , self.y)).center
         retangulo = imagem_rotacionada.get_rect(center = pos_centro_imagem)
-        tela.blid(imagem_rotacionada, retangulo.topleft)
+        tela.blit (imagem_rotacionada, retangulo.topleft)
         
 
     def get_mask(self):
@@ -101,7 +101,7 @@ class Passaro:
 class Cano:
     DISTANCIA = 200
     VELOCIDADE = 5
-
+ 
     def __init__(self, x):
         self.x = x
         self.altura = 0
@@ -113,7 +113,7 @@ class Cano:
         self.definir_altura()
 
     def definir_altura(self):
-        self.altura = random.range(50,450)
+        self.altura = random.randrange(50,450)
         self.pos_topo = self.altura - self.CANO_TOPO.get_height()
         self.pos_base = self.altura + self.DISTANCIA
     
